@@ -1,0 +1,20 @@
+var mysql = require('mysql');
+
+config = {
+   host: 'localhost',
+   user: 'root',
+   password: '',
+   database: 'schooldev'
+}
+var connection =mysql.createConnection(config); //added the line
+connection.connect(function(err){
+  if (err){
+    console.log('error connecting:' + err.stack);
+     return;
+  }
+  console.log('connected successfully to DB.');
+});
+
+module.exports ={
+     connection : mysql.createConnection(config) 
+} 
